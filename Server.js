@@ -21,7 +21,7 @@ class Server {
       let url = ctx.request.body.url;
       if (!url) throw new Error('Missing parameter url');
       let options = ctx.request.body.options;
-      ctx.body = await client.request(url, options);
+      ctx.body = await request(url, options);
     });
   }
 

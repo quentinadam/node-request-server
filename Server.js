@@ -26,7 +26,15 @@ class Server {
   }
 
   listen(port = 80, address) {
-    this.app.listen(port, address);
+    return new Promise((resolve, reject) => {
+      try {
+        this.app.listen(port, address, () => {
+          resolve();
+        });
+      } catch (error) {
+        reject(error);
+      }
+    });
   }
 }
 

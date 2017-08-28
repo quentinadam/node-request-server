@@ -8,8 +8,6 @@ const optionDefinitions = [
 
 let options = commandLineArgs(optionDefinitions);
 
-console.log(options);
-
 let server = new Server();
 
 server.listen(options.port, options.address);

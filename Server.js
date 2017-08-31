@@ -33,6 +33,7 @@ class Server {
           console.log(url);
         }
       }
+      options = Object.assing({forever: true, gzip: true}, options);
       ctx.body = await request(url, options);
     });
   }

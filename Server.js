@@ -33,7 +33,7 @@ class Server {
           console.log(url);
         }
       }
-      options = Object.assing({forever: true, gzip: true}, options);
+      options = Object.assign({forever: true, gzip: true}, options);
       try {
         ctx.body = await request(url, options);
       } catch (error) {

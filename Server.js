@@ -34,7 +34,12 @@ class Server {
         }
       }
       options = Object.assing({forever: true, gzip: true}, options);
-      ctx.body = await request(url, options);
+      try {
+        ctx.body = await request(url, options);
+      } catch (error) {
+        ctx.status = 502;
+        ctx.body = {error: error.message};
+      }
     });
   }
 
